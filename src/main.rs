@@ -24,6 +24,8 @@ enum Commands {
     User,
     #[command(about = "Returns information for a given profile")]
     Profile,
+    #[command(about = "Returns information for a given product")]
+    Product,
 }
 
 #[derive(Serialize)]
@@ -64,7 +66,8 @@ async fn main() {
     match &cli.command {
         Commands::Login => { login(config).await },
         Commands::User => { get_user(config).await.expect("No user authenticated") },
-        Commands::Profile => todo!()
+        Commands::Profile => todo!(),
+        Commands::Product => todo!(),
     };
 }
 
